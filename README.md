@@ -14,3 +14,4 @@ While building this project, I learnt about switch statements,  which helped my 
 I also learnt some new header files, which allowed me to generate a random number that the user has to guess.
 
 Finally, I strengthened my knowledge of functions, which I am not so strong in.
+
