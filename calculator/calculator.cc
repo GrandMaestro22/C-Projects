@@ -5,7 +5,7 @@ using namespace std;
 int calc(); 
 //Main code block
 int main() {
-    cout << "Result: " << calc() << endl;
+    cout << calc() << endl;
     return 0;
 }
 //Function to handle the arithmetic calculations
@@ -38,3 +38,4 @@ int calc() {
 
     return result;
 }
+
