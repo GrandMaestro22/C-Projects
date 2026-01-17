@@ -35,13 +35,16 @@ int main(){
     srand(time(0));
 
     int guess;
+    int attempts = 0;
+    int attemptsLimit = 5;
     
     cout << "Try to guess the random number!"<<endl;
     cout << "Select Mode (1.Easy/2.Medium/3.Hard)"<<endl;
     cout << "Enter 1,2 or 3 for the difficulty"<<endl;
     Difficulty difficulty = getDifficultyFromUser();
-    cout << "Okay! Now, try to guess!";
+    cout << "Okay! Now, try to guess! " << endl;
     cin >> guess;
+    attempts++;
 
     int randomNumber;
     if(difficulty == Difficulty::EASY){
@@ -55,8 +58,14 @@ int main(){
     
 
     while(randomNumber != guess){
-         cout << "Try to guess the random number!";
-         cin >> guess;
+        if (attempts >= attemptsLimit) {
+            cout << "You ran out of attempts! The number was " << randomNumber << endl;
+            return 0;
+        }
+        cout << "Wrong! Try to guess the random number again: ";
+        cout << "Attempts left: " << attemptsLimit - attempts << endl;
+        cin >> guess;
+        attempts++;
     }
     cout << "You Win!" << endl;
     return 0;
